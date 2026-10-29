@@ -1,0 +1,294 @@
+{
+  "info": {
+    "_postman_id": "smart-parking-qa-collection",
+    "name": "Smart Parking System — API Test Collection",
+    "description": "QA API test collection for Smart Parking System.\n\nIMPORTANT NOTE: The deployed application (https://saiteja-23-p.github.io/smart-parking-system/) operates in CLIENT-SIDE SANDBOX MODE. No live backend API is accessible from the deployed URL.\n\nThis collection documents:\n1. Expected API contracts based on application behavior analysis\n2. Test structure that would be executed against a real backend\n3. Assertions and validation patterns for when a live API is available\n\nStatus: PREPARED (not executed — no live API available)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "https://api.smart-parking.com", "type": "string", "description": "Base URL — replace with actual backend URL when available" },
+    { "key": "authToken", "value": "", "type": "string", "description": "JWT token set after login" },
+    { "key": "adminToken", "value": "", "type": "string", "description": "Admin JWT token" }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "POST /auth/login — Valid User Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// API-001: Verify 200 OK on valid login",
+                  "pm.test('Status 200 OK', () => pm.response.to.have.status(200));",
+                  "",
+                  "// API-002: Response contains JWT token",
+                  "pm.test('Response contains JWT token', () => {",
+                  "  const body = pm.response.json();",
+                  "  pm.expect(body).to.have.property('jwt');",
+                  "  pm.expect(body.jwt).to.be.a('string').and.not.empty;",
+                  "});",
+                  "",
+                  "// API-003: Response contains user role",
+                  "pm.test('Response contains user role', () => {",
+                  "  const body = pm.response.json();",
+                  "  pm.expect(body).to.have.property('role');",
+                  "  pm.expect(['ROLE_USER', 'ROLE_ADMIN']).to.include(body.role);",
+                  "});",
+                  "",
+                  "// Save token for subsequent requests",
+                  "if (pm.response.code === 200) {",
+                  "  pm.collectionVariables.set('authToken', pm.response.json().jwt);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@test.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth", "login"] }
+          }
+        },
+        {
+          "name": "POST /auth/login — Invalid Credentials",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 401 Unauthorized', () => pm.response.to.have.status(401));",
+                  "pm.test('Error message present', () => {",
+                  "  const body = pm.response.json();",
+                  "  pm.expect(body).to.have.property('message');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"wrong@user.com\",\n  \"password\": \"wrongpassword\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth", "login"] }
+          }
+        },
+        {
+          "name": "POST /auth/login — Empty Fields",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 400 Bad Request', () => pm.response.to.have.status(400));",
+                  "pm.test('Validation error returned', () => {",
+                  "  pm.expect(pm.response.json()).to.have.property('message');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"\",\n  \"password\": \"\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth", "login"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Parking Slots",
+      "item": [
+        {
+          "name": "GET /slots — Get All Parking Slots",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200 OK', () => pm.response.to.have.status(200));",
+                  "pm.test('Response is an array', () => {",
+                  "  pm.expect(pm.response.json()).to.be.an('array');",
+                  "});",
+                  "pm.test('Slots have required fields', () => {",
+                  "  const slots = pm.response.json();",
+                  "  if (slots.length > 0) {",
+                  "    pm.expect(slots[0]).to.have.all.keys(['id', 'status', 'location']);",
+                  "  }",
+                  "});",
+                  "pm.test('Response time < 2000ms', () => {",
+                  "  pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{authToken}}" }],
+            "url": { "raw": "{{baseUrl}}/slots", "host": ["{{baseUrl}}"], "path": ["slots"] }
+          }
+        },
+        {
+          "name": "GET /slots?location=gachibowli — Filter by Location",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200 OK', () => pm.response.to.have.status(200));",
+                  "pm.test('All returned slots match location filter', () => {",
+                  "  const slots = pm.response.json();",
+                  "  slots.forEach(slot => {",
+                  "    pm.expect(slot.location.toLowerCase()).to.include('gachibowli');",
+                  "  });",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{authToken}}" }],
+            "url": {
+              "raw": "{{baseUrl}}/slots?location=gachibowli",
+              "host": ["{{baseUrl}}"],
+              "path": ["slots"],
+              "query": [{ "key": "location", "value": "gachibowli" }]
+            }
+          }
+        },
+        {
+          "name": "GET /slots — Without Auth Token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 401 Unauthorized (no token)', () => pm.response.to.have.status(401));"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/slots", "host": ["{{baseUrl}}"], "path": ["slots"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "POST /bookings — Create Valid Booking",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 201 Created', () => pm.response.to.have.status(201));",
+                  "pm.test('Booking token returned', () => {",
+                  "  const body = pm.response.json();",
+                  "  pm.expect(body).to.have.property('token');",
+                  "  pm.expect(body.token).to.match(/TOKEN-[A-Z0-9\\-]+/);",
+                  "});",
+                  "pm.test('Booking ID present', () => {",
+                  "  pm.expect(pm.response.json()).to.have.property('bookingId');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"slotId\": \"TH-01\",\n  \"vehicleNumber\": \"KA01AB1234\",\n  \"durationHours\": 2,\n  \"location\": \"T-Hub Gachibowli\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/bookings", "host": ["{{baseUrl}}"], "path": ["bookings"] }
+          }
+        },
+        {
+          "name": "POST /bookings — Empty Vehicle Number",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 400 Bad Request', () => pm.response.to.have.status(400));",
+                  "pm.test('Error message for vehicle number', () => {",
+                  "  const body = pm.response.json();",
+                  "  pm.expect(body.message).to.include('vehicle');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"slotId\": \"TH-01\",\n  \"vehicleNumber\": \"\",\n  \"durationHours\": 2,\n  \"location\": \"T-Hub Gachibowli\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/bookings", "host": ["{{baseUrl}}"], "path": ["bookings"] }
+          }
+        },
+        {
+          "name": "GET /bookings/my — Get User Booking History",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200 OK', () => pm.response.to.have.status(200));",
+                  "pm.test('Returns array of bookings', () => {",
+                  "  pm.expect(pm.response.json()).to.be.an('array');",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{authToken}}" }],
+            "url": { "raw": "{{baseUrl}}/bookings/my", "host": ["{{baseUrl}}"], "path": ["bookings", "my"] }
+          }
+        }
+      ]
+    }
+  ]
+}

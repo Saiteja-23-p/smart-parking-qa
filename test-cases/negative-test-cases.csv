@@ -1,0 +1,21 @@
+TC-ID,Module,Test Scenario,Test Data,Expected Result,Priority,Type
+NEG-001,Login,Empty email on login,(empty) email + valid password,Required error shown for email,P0,Negative
+NEG-002,Login,Empty password on login,Valid email + (empty) password,Required error shown for password,P0,Negative
+NEG-003,Login,Invalid email format,notanemail@,Validation error - invalid email format,P0,Negative
+NEG-004,Login,Wrong password,user@test.com + wrongpassword,Login rejected message shown,P0,Negative
+NEG-005,Login,SQL injection in email field,"' OR 1=1 --",No bypass; error message shown,P1,Negative/Security
+NEG-006,Login,XSS payload in email,"<script>alert('xss')</script>",Script not executed; sanitized,P1,Negative/Security
+NEG-007,Booking,Empty vehicle number,(empty),Error: Please provide a vehicle license number.,P0,Negative
+NEG-008,Booking,Duration = 0,Duration field: 0,Validation error - duration must be at least 1,P0,Negative
+NEG-009,Booking,Negative duration,Duration field: -5,Validation error - invalid duration,P0,Negative
+NEG-010,Booking,Special chars in vehicle number,"@#$%^&*!",Validation error - invalid vehicle number,P1,Negative
+NEG-011,Booking,XSS in vehicle number,"<img src=x onerror=alert(1)>",Script not executed; input rejected,P1,Negative/Security
+NEG-012,Registration,Duplicate email registration,Existing email address,Error: account already exists,P1,Negative
+NEG-013,Registration,Password too short (1 char),Password: a,Error: password too short,P1,Negative
+NEG-014,Registration,Invalid email format in register,Email: user@,Error: invalid email,P1,Negative
+NEG-015,Navigation,Access /dashboard without login,No auth token,Redirect to login page,P0,Negative/Security
+NEG-016,Navigation,Access /admin without login,No auth token,Redirect to login page,P0,Negative/Security
+NEG-017,Navigation,Access /admin as regular user,Regular user token,Access denied; not shown admin panel,P0,Negative/Security
+NEG-018,Booking,Duration field with text input,"Duration: abc",Validation error or field rejects non-numeric,P1,Negative
+NEG-019,Booking,Very long vehicle number,"Vehicle: AAAAAAAAAAAAAAAAAAAAAAAAAAAA (30 chars)",Error or truncation; no crash,P1,Negative
+NEG-020,Slot Selection,Click reserved slot,Reserved slot in grid,Slot cannot be booked; indication shown,P1,Negative

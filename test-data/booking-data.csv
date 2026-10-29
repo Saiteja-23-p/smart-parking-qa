@@ -1,0 +1,19 @@
+scenario,vehicle_number,duration_hours,location,expected_result,test_type
+Valid booking - standard,KA01AB1234,2,T-Hub Gachibowli,Booking confirmed + token,Happy Path
+Valid booking - short duration,TS07XY9087,1,GVK One,Booking confirmed,Happy Path
+Valid booking - long duration,MH12CD5678,24,Inorbit Mall,Booking confirmed (24hr tariff),Boundary
+Valid booking - different format,AP09EF0001,3,Charminar,Booking confirmed,Happy Path
+Invalid - empty vehicle,(empty),2,T-Hub,Error: vehicle number required,Negative
+Invalid - duration 0,KA01AB1234,0,T-Hub,Error: invalid duration,Boundary
+Invalid - duration negative,KA01AB1234,-1,T-Hub,Error: negative duration not allowed,Negative
+Invalid - duration >24,KA01AB1234,25,T-Hub,Error: exceeds maximum duration,Boundary
+Invalid - vehicle XSS,"<script>alert(1)</script>",2,T-Hub,XSS not executed,Security
+Invalid - vehicle SQL,"' OR 1=1 --",2,T-Hub,No bypass; error shown,Security
+Invalid - vehicle special chars,@#$%^&*!,2,T-Hub,Validation error,Negative
+Invalid - very long vehicle,AAAAAAAAAAAAAAAAAAAAAAAAA,2,T-Hub,Error or truncation,Boundary
+Invalid - decimal duration,KA01AB1234,1.5,T-Hub,Accepted or rejected gracefully,Edge Case
+Invalid - letters in duration,KA01AB1234,abc,T-Hub,Numeric validation error,Negative
+Edge case - single char vehicle,A,2,T-Hub,Validation error - too short,Boundary
+Edge case - 4 char vehicle,KA01,2,T-Hub,Accepted or min-length error,Boundary
+Edge case - 12 char vehicle,KA01AB123456,2,T-Hub,Accepted (at max),Boundary
+Edge case - 13 char vehicle,KA01AB1234567,2,T-Hub,Rejected (over max),Boundary

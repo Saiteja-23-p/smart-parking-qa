@@ -1,0 +1,103 @@
+name: Smart Parking QA — Playwright Automation
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run nightly regression at 2:00 AM UTC
+    - cron: '0 2 * * *'
+
+jobs:
+  playwright-tests:
+    name: Playwright Test Suite
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: automation/package-lock.json
+
+      - name: Install dependencies
+        working-directory: automation
+        run: npm ci
+
+      - name: Install Playwright browsers
+        working-directory: automation
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+
+      - name: Run Smoke Tests
+        working-directory: automation
+        run: npx playwright test --grep @smoke --project=${{ matrix.browser }}
+        env:
+          CI: true
+        continue-on-error: false
+
+      - name: Run Auth Tests
+        working-directory: automation
+        run: npx playwright test auth.test.js --project=${{ matrix.browser }}
+        env:
+          CI: true
+        continue-on-error: true
+
+      - name: Run Security Tests
+        working-directory: automation
+        run: npx playwright test security.test.js --project=${{ matrix.browser }}
+        env:
+          CI: true
+        continue-on-error: true
+
+      - name: Run Full Regression Suite
+        working-directory: automation
+        run: npx playwright test --grep @regression --project=${{ matrix.browser }}
+        env:
+          CI: true
+        continue-on-error: true
+
+      - name: Upload HTML Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-${{ matrix.browser }}-${{ github.run_number }}
+          path: automation/reports/html-report/
+          retention-days: 30
+
+      - name: Upload Test Results JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-json-${{ matrix.browser }}-${{ github.run_number }}
+          path: automation/reports/test-results.json
+          retention-days: 30
+
+      - name: Upload Screenshots on Failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: failure-screenshots-${{ matrix.browser }}-${{ github.run_number }}
+          path: automation/reports/test-artifacts/
+          retention-days: 15
+
+  notify-on-failure:
+    name: Notify on CI Failure
+    runs-on: ubuntu-latest
+    needs: playwright-tests
+    if: failure()
+    steps:
+      - name: Summarize failed run
+        run: |
+          echo "::error::Playwright test suite failed on branch ${{ github.ref }}"
+          echo "::notice::Download artifacts from the Actions run for screenshots and HTML report"

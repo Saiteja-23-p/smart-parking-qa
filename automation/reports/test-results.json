@@ -1,0 +1,2027 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/25.2.1/bin/node",
+      "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/node_modules/.bin/playwright",
+      "test",
+      "--project=chromium"
+    ],
+    "configFile": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/playwright.config.js",
+    "rootDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/reports/test-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/reports/test-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/reports/test-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "edge",
+        "name": "edge",
+        "testDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/reports/test-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-chrome",
+        "name": "mobile-chrome",
+        "testDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/reports/test-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "mobile-safari",
+        "name": "mobile-safari",
+        "testDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/reports/test-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "name": "chromium",
+        "testDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests",
+        "snapshotDir": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "https://saiteja-23-p.github.io/smart-parking-system",
+          "trace": "on-first-retry",
+          "screenshot": "only-on-failure",
+          "video": "on-first-retry",
+          "actionTimeout": 10000,
+          "headless": true,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports/html-report",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "auth.test.js",
+      "file": "auth.test.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@auth Authentication Tests",
+          "file": "auth.test.js",
+          "line": 17,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-006 @regression | Valid user login redirects to dashboard",
+              "ok": true,
+              "tags": [
+                "auth",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6412,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:00.484Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d73e6464033218f2952-c48e5eb39723c8a4ef58",
+              "file": "auth.test.js",
+              "line": 28,
+              "column": 3
+            },
+            {
+              "title": "TC-007 @regression | Admin login redirects to admin area",
+              "ok": true,
+              "tags": [
+                "auth",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4971,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:08.108Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d73e6464033218f2952-5168a12c1715d0940a14",
+              "file": "auth.test.js",
+              "line": 44,
+              "column": 3
+            },
+            {
+              "title": "TC-008 | Login with malformed email shows error",
+              "ok": true,
+              "tags": [
+                "auth"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4445,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:13.104Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d73e6464033218f2952-c8bd1bb656a73139d403",
+              "file": "auth.test.js",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "TC-009 | Login with empty email shows required error",
+              "ok": true,
+              "tags": [
+                "auth"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2773,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:17.573Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d73e6464033218f2952-d16fc10eda88326f88fe",
+              "file": "auth.test.js",
+              "line": 73,
+              "column": 3
+            },
+            {
+              "title": "TC-010 | Login with empty password shows required error",
+              "ok": true,
+              "tags": [
+                "auth"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2831,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:20.368Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d73e6464033218f2952-b3d09889f2aa65e5f23e",
+              "file": "auth.test.js",
+              "line": 88,
+              "column": 3
+            },
+            {
+              "title": "TC-012 | Wrong password shows login rejection message",
+              "ok": false,
+              "tags": [
+                "auth"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5028,
+                      "error": {
+                        "message": "Error: Wrong password should be rejected\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: Wrong password should be rejected\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/auth.test.js:115:61",
+                        "location": {
+                          "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/auth.test.js",
+                          "column": 61,
+                          "line": 115
+                        },
+                        "snippet": "  113 |                        bodyText.includes('invalid') ||\n  114 |                        bodyText.includes('failed');\n> 115 |     expect(isRejected, 'Wrong password should be rejected').toBeTruthy();\n      |                                                             ^\n  116 |   });\n  117 |\n  118 |   // ─── TC-013: Password Masking ─────────────────────────────────────────────────"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/auth.test.js",
+                            "column": 61,
+                            "line": 115
+                          },
+                          "message": "Error: Wrong password should be rejected\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n  113 |                        bodyText.includes('invalid') ||\n  114 |                        bodyText.includes('failed');\n> 115 |     expect(isRejected, 'Wrong password should be rejected').toBeTruthy();\n      |                                                             ^\n  116 |   });\n  117 |\n  118 |   // ─── TC-013: Password Masking ─────────────────────────────────────────────────\n    at /Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/auth.test.js:115:61"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:23.209Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/reports/test-artifacts/auth--auth-Authentication--19f53-ows-login-rejection-message-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/reports/test-artifacts/auth--auth-Authentication--19f53-ows-login-rejection-message-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/auth.test.js",
+                        "column": 61,
+                        "line": 115
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "2d73e6464033218f2952-68f09c200b6bfed272b7",
+              "file": "auth.test.js",
+              "line": 102,
+              "column": 3
+            },
+            {
+              "title": "TC-013 | Password field masks input characters",
+              "ok": true,
+              "tags": [
+                "auth"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1456,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:28.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d73e6464033218f2952-fe688257b9e3fbccdfa2",
+              "file": "auth.test.js",
+              "line": 119,
+              "column": 3
+            },
+            {
+              "title": "TC-014 @security | SQL injection in email field does not bypass login",
+              "ok": true,
+              "tags": [
+                "auth",
+                "security"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5233,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:30.417Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d73e6464033218f2952-02eacbf540e350647bfa",
+              "file": "auth.test.js",
+              "line": 128,
+              "column": 3
+            },
+            {
+              "title": "TC-015 @security | XSS payload in email field is not executed",
+              "ok": true,
+              "tags": [
+                "auth",
+                "security"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5055,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:35.658Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d73e6464033218f2952-a77ebced53c060059942",
+              "file": "auth.test.js",
+              "line": 141,
+              "column": 3
+            },
+            {
+              "title": "TC-017 | Very long email (300 chars) does not crash application",
+              "ok": true,
+              "tags": [
+                "auth"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4974,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:40.720Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d73e6464033218f2952-8bce129de3ace331099c",
+              "file": "auth.test.js",
+              "line": 155,
+              "column": 3
+            },
+            {
+              "title": "TC-018 | Session persists after page refresh",
+              "ok": true,
+              "tags": [
+                "auth"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5345,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:45.704Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "2d73e6464033218f2952-c8b0d6bbb200847d1b2c",
+              "file": "auth.test.js",
+              "line": 169,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "booking.test.js",
+      "file": "booking.test.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@booking Booking Flow Tests",
+          "file": "booking.test.js",
+          "line": 17,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-035 @regression | Booking form rejects empty vehicle number",
+              "ok": true,
+              "tags": [
+                "booking",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/booking.test.js",
+                        "line": 63,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 17950,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "ℹ️ Note: Booking form requires slot selection first. Form access depends on slot grid navigation.\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:00.487Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/booking.test.js",
+                            "line": 63,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c93c607e2539da6b28e9-ef90dffef0ff671a0993",
+              "file": "booking.test.js",
+              "line": 26,
+              "column": 3
+            },
+            {
+              "title": "TC-036 @regression | Valid booking completes and shows confirmation",
+              "ok": true,
+              "tags": [
+                "booking",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/booking.test.js",
+                        "line": 105,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 14929,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "ℹ️ Note: Slot selection flow may require different navigation. Manual verification recommended.\n"
+                        },
+                        {
+                          "text": "Error: locator.waitFor: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[class*=\"available\" i]').first() to be visible\u001b[22m\n\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:19.645Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/booking.test.js",
+                            "line": 105,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c93c607e2539da6b28e9-eb419b0bec6d9823a1c3",
+              "file": "booking.test.js",
+              "line": 68,
+              "column": 3
+            },
+            {
+              "title": "TC-037 @security | XSS payload in vehicle number is not executed",
+              "ok": true,
+              "tags": [
+                "booking",
+                "security"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/booking.test.js",
+                        "line": 129,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 12088,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "ℹ️ Vehicle input not found on current page — XSS test requires booking form access.\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:34.585Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/booking.test.js",
+                            "line": 129,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c93c607e2539da6b28e9-08896198a6b524471e2e",
+              "file": "booking.test.js",
+              "line": 110,
+              "column": 3
+            },
+            {
+              "title": "TC-039 | Duration = 1 (minimum) is accepted",
+              "ok": true,
+              "tags": [
+                "booking"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/booking.test.js",
+                        "line": 145,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 11866,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:46.682Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/booking.test.js",
+                            "line": 145,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c93c607e2539da6b28e9-18e375c4e5eaa079d915",
+              "file": "booking.test.js",
+              "line": 134,
+              "column": 3
+            },
+            {
+              "title": "TC-040 | Duration = 0 (below minimum) triggers validation",
+              "ok": true,
+              "tags": [
+                "booking"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/booking.test.js",
+                        "line": 171,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 11894,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:58.564Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/booking.test.js",
+                            "line": 171,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "c93c607e2539da6b28e9-39e850fa4d90765f7567",
+              "file": "booking.test.js",
+              "line": 150,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "responsive.test.js",
+      "file": "responsive.test.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@responsive Responsive - Mobile-S (375x667)",
+          "file": "responsive.test.js",
+          "line": 25,
+          "column": 8,
+          "specs": [
+            {
+              "title": "Landing page renders at Mobile-S",
+              "ok": true,
+              "tags": [
+                "responsive"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2576,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:00.487Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "90c7a9bf792f0d84f8e9-2b307613a04811246ff2",
+              "file": "responsive.test.js",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Login page usable at Mobile-S",
+              "ok": true,
+              "tags": [
+                "responsive"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1615,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:04.285Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "90c7a9bf792f0d84f8e9-e5ea5fbede69afacabe4",
+              "file": "responsive.test.js",
+              "line": 46,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "@responsive Responsive - Mobile-L (iPhone14) (390x844)",
+          "file": "responsive.test.js",
+          "line": 25,
+          "column": 8,
+          "specs": [
+            {
+              "title": "Landing page renders at Mobile-L (iPhone14)",
+              "ok": true,
+              "tags": [
+                "responsive"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1283,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:05.915Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "90c7a9bf792f0d84f8e9-a3c1846621f70772f6e3",
+              "file": "responsive.test.js",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Login page usable at Mobile-L (iPhone14)",
+              "ok": true,
+              "tags": [
+                "responsive"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1276,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:07.206Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "90c7a9bf792f0d84f8e9-3252c8f05d03be064646",
+              "file": "responsive.test.js",
+              "line": 46,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "@responsive Responsive - Tablet (768x1024)",
+          "file": "responsive.test.js",
+          "line": 25,
+          "column": 8,
+          "specs": [
+            {
+              "title": "Landing page renders at Tablet",
+              "ok": true,
+              "tags": [
+                "responsive"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1418,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:08.488Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "90c7a9bf792f0d84f8e9-26f5a04bec8099a2c9fc",
+              "file": "responsive.test.js",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Login page usable at Tablet",
+              "ok": true,
+              "tags": [
+                "responsive"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1627,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:09.912Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "90c7a9bf792f0d84f8e9-92cf7c0d3b5be877e4bb",
+              "file": "responsive.test.js",
+              "line": 46,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "@responsive Responsive - Laptop (1366x768)",
+          "file": "responsive.test.js",
+          "line": 25,
+          "column": 8,
+          "specs": [
+            {
+              "title": "Landing page renders at Laptop",
+              "ok": true,
+              "tags": [
+                "responsive"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1272,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:11.545Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "90c7a9bf792f0d84f8e9-bdef55583ce021572e2b",
+              "file": "responsive.test.js",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Login page usable at Laptop",
+              "ok": true,
+              "tags": [
+                "responsive"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1278,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:12.824Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "90c7a9bf792f0d84f8e9-8c05730db6082a10f425",
+              "file": "responsive.test.js",
+              "line": 46,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "@responsive Responsive - Desktop-FHD (1920x1080)",
+          "file": "responsive.test.js",
+          "line": 25,
+          "column": 8,
+          "specs": [
+            {
+              "title": "Landing page renders at Desktop-FHD",
+              "ok": true,
+              "tags": [
+                "responsive"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1420,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:14.109Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "90c7a9bf792f0d84f8e9-26d6a86d24cf4b9b2813",
+              "file": "responsive.test.js",
+              "line": 27,
+              "column": 5
+            },
+            {
+              "title": "Login page usable at Desktop-FHD",
+              "ok": true,
+              "tags": [
+                "responsive"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1272,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:15.536Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "90c7a9bf792f0d84f8e9-b526ff0bc914bc5c7582",
+              "file": "responsive.test.js",
+              "line": 46,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "security.test.js",
+      "file": "security.test.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@security Security Tests",
+          "file": "security.test.js",
+          "line": 16,
+          "column": 6,
+          "specs": [
+            {
+              "title": "SEC-001 @regression | Unauthenticated access to /dashboard redirects to login",
+              "ok": true,
+              "tags": [
+                "security",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 3863,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:00.482Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed8a39573e5903d5e92b-a57a6d650b96b0424ee9",
+              "file": "security.test.js",
+              "line": 19,
+              "column": 3
+            },
+            {
+              "title": "SEC-002 @regression | Unauthenticated access to /admin redirects to login",
+              "ok": true,
+              "tags": [
+                "security",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 2537,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:05.563Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed8a39573e5903d5e92b-fc382a8206660a14bdbf",
+              "file": "security.test.js",
+              "line": 41,
+              "column": 3
+            },
+            {
+              "title": "SEC-003 @regression | Regular user is blocked from /admin panel",
+              "ok": true,
+              "tags": [
+                "security",
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 6984,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:08.109Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed8a39573e5903d5e92b-b9fb7bfc4014594f6856",
+              "file": "security.test.js",
+              "line": 60,
+              "column": 3
+            },
+            {
+              "title": "SEC-010 | Logout clears localStorage token",
+              "ok": true,
+              "tags": [
+                "security"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/security.test.js",
+                        "line": 102,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "skipped",
+                      "duration": 9864,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "⚠️ Logout button not found at known selectors. Manual verification required.\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:15.107Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/security.test.js",
+                            "line": 102,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ed8a39573e5903d5e92b-d33543d2685cfc64e048",
+              "file": "security.test.js",
+              "line": 82,
+              "column": 3
+            },
+            {
+              "title": "SEC-015 | Dashboard is not accessible after logout via back button",
+              "ok": false,
+              "tags": [
+                "security"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 10123,
+                      "error": {
+                        "message": "Error: Dashboard must not be accessible after session cleared\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: Dashboard must not be accessible after session cleared\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/security.test.js:134:83",
+                        "location": {
+                          "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/security.test.js",
+                          "column": 83,
+                          "line": 134
+                        },
+                        "snippet": "  132 |                         !bodyText.includes('Active Bookings');\n  133 |\n> 134 |     expect(isProtected, 'Dashboard must not be accessible after session cleared').toBeTruthy();\n      |                                                                                   ^\n  135 |   });\n  136 |\n  137 |   // ─── SEC-009: Password Masking ────────────────────────────────────────────────"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/security.test.js",
+                            "column": 83,
+                            "line": 134
+                          },
+                          "message": "Error: Dashboard must not be accessible after session cleared\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n  132 |                         !bodyText.includes('Active Bookings');\n  133 |\n> 134 |     expect(isProtected, 'Dashboard must not be accessible after session cleared').toBeTruthy();\n      |                                                                                   ^\n  135 |   });\n  136 |\n  137 |   // ─── SEC-009: Password Masking ────────────────────────────────────────────────\n    at /Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/security.test.js:134:83"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:24.980Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/reports/test-artifacts/security--security-Securit-37a2d-fter-logout-via-back-button-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/reports/test-artifacts/security--security-Securit-37a2d-fter-logout-via-back-button-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/poosalasaiteja/Desktop/testing/smart-parking-qa/automation/tests/security.test.js",
+                        "column": 83,
+                        "line": 134
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "ed8a39573e5903d5e92b-8f83bfce0fb43872ffab",
+              "file": "security.test.js",
+              "line": 107,
+              "column": 3
+            },
+            {
+              "title": "SEC-009 | Password input field masks characters",
+              "ok": true,
+              "tags": [
+                "security"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 1388,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:35.639Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed8a39573e5903d5e92b-03da9283dcf498a72998",
+              "file": "security.test.js",
+              "line": 138,
+              "column": 3
+            },
+            {
+              "title": "SEC-005 | SQL injection in login email does not bypass auth",
+              "ok": true,
+              "tags": [
+                "security"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 3459,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:37.223Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed8a39573e5903d5e92b-5e85a3330776532533ad",
+              "file": "security.test.js",
+              "line": 150,
+              "column": 3
+            },
+            {
+              "title": "SEC-006 | XSS in login email is not executed",
+              "ok": true,
+              "tags": [
+                "security"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 3445,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:40.690Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ed8a39573e5903d5e92b-2fcec8cae8d81ffa7e62",
+              "file": "security.test.js",
+              "line": 174,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "smoke.test.js",
+      "file": "smoke.test.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@smoke Smoke Tests — Smart Parking System",
+          "file": "smoke.test.js",
+          "line": 18,
+          "column": 6,
+          "specs": [
+            {
+              "title": "SMK-001 | Application loads successfully",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1272,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:16.835Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35da8465093928ed03e5-746777b7320082259a0e",
+              "file": "smoke.test.js",
+              "line": 21,
+              "column": 3
+            },
+            {
+              "title": "SMK-002 | Navigation bar is displayed on landing page",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1248,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:18.115Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35da8465093928ed03e5-c5a0dfee1091f5394b90",
+              "file": "smoke.test.js",
+              "line": 35,
+              "column": 3
+            },
+            {
+              "title": "SMK-003 | Login page loads at #/login",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1275,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:19.369Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35da8465093928ed03e5-31bde07417ca27aa5f57",
+              "file": "smoke.test.js",
+              "line": 44,
+              "column": 3
+            },
+            {
+              "title": "SMK-004 | Valid user can login and reach dashboard",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3373,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:20.650Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35da8465093928ed03e5-25e4e0136e8d2184577a",
+              "file": "smoke.test.js",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "SMK-005 | Admin can login with admin credentials",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3392,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:24.031Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35da8465093928ed03e5-caf0dc1e26dce7b96fc7",
+              "file": "smoke.test.js",
+              "line": 71,
+              "column": 3
+            },
+            {
+              "title": "SMK-006 | User dashboard loads after login",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 5157,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:27.451Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35da8465093928ed03e5-a110bf62357a8ee0fb5d",
+              "file": "smoke.test.js",
+              "line": 84,
+              "column": 3
+            },
+            {
+              "title": "SMK-007 | User can logout successfully",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 6170,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:32.629Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35da8465093928ed03e5-96f233dfdc59dac47604",
+              "file": "smoke.test.js",
+              "line": 95,
+              "column": 3
+            },
+            {
+              "title": "SMK-008 | Admin panel is accessible to admin user",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 5483,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-29T16:58:38.807Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "35da8465093928ed03e5-d1354e16ff0eb6729504",
+              "file": "smoke.test.js",
+              "line": 120,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-29T16:58:00.086Z",
+    "duration": 70410.203,
+    "expected": 34,
+    "skipped": 6,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

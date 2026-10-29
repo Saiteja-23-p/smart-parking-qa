@@ -1,0 +1,13 @@
+scenario,email,password,expected_error,notes
+Empty email,(empty),password123,Email required,Both fields empty
+Empty password,user@test.com,(empty),Password required,Password missing
+Both empty,(empty),(empty),Both required,No input at all
+Invalid format - no @,userdomain.com,password123,Invalid email format,Missing @ symbol
+Invalid format - no domain,user@,password123,Invalid email format,Domain missing
+Invalid format - spaces,user @test .com,password123,Invalid email format,Spaces in email
+Wrong credentials,wrong@email.com,badpassword,Login rejected,Neither email nor password correct
+SQL injection,"' OR 1=1 --",anything,No bypass,Security test
+XSS in email,"<script>alert('xss')</script>",password,No execution,Security test
+Very long email (300 chars),aaaaaa...aaa@test.com,password123,Error or truncation,Boundary test
+Special chars email,user!#$%@test.com,password123,Error or handled,Special characters
+Unicode email,用户@测试.com,password123,Error or handled,Unicode input

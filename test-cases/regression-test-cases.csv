@@ -1,0 +1,13 @@
+TC-ID,Module,Test Scenario,Test Data,Expected Result,Priority,Type
+REG-001,Login,User login full flow,user@test.com / password123,Login succeeds; dashboard loads,P0,Regression
+REG-002,Login,Admin login full flow,admin@smartparking.com / any,Admin login succeeds; admin panel loads,P0,Regression
+REG-003,Login,Invalid login rejected,wrong@email.com / badpassword,Error shown; no login,P0,Regression
+REG-004,Booking,End-to-end booking flow,"KA01AB1234, 2 hrs",Booking token generated,P0,Regression
+REG-005,Booking,Vehicle number required validation,(empty vehicle),Error shown,P0,Regression
+REG-006,Dashboard,Dashboard loads with booking history,After 1+ bookings,Dashboard shows bookings,P0,Regression
+REG-007,Admin,Admin panel blocks regular user,Regular user,Access denied,P0,Regression
+REG-008,Logout,Logout clears session,Logged in user,Token cleared; redirected to login,P0,Regression
+REG-009,Navigation,All nav links functional,None,No broken links,P1,Regression
+REG-010,Slot Selection,Slot grid displays,Logged in,Slot grid with available slots visible,P1,Regression
+REG-011,Security,Unauth dashboard access,No token,Redirect to login,P0,Regression
+REG-012,Security,Unauth admin access,No token,Redirect to login,P0,Regression

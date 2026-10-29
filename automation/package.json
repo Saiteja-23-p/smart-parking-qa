@@ -1,0 +1,16 @@
+{
+  "name": "smart-parking-qa-automation",
+  "version": "1.0.0",
+  "description": "Playwright test automation for Smart Parking System",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:smoke": "npx playwright test --grep @smoke",
+    "test:regression": "npx playwright test --grep @regression",
+    "test:security": "npx playwright test --grep @security",
+    "test:report": "npx playwright show-report automation/reports",
+    "test:headed": "npx playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}

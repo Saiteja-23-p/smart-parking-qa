@@ -1,0 +1,21 @@
+TC-ID,Field,Partition,Test Data,Expected Result,Boundary Type,Priority
+BVA-001,Duration (hours),Minimum - 1,0,Validation error - too low,Below Min,P1
+BVA-002,Duration (hours),Minimum,1,Booking accepted; 1hr tariff,At Min,P0
+BVA-003,Duration (hours),Minimum + 1,2,Booking accepted; 2hr tariff,Above Min,P0
+BVA-004,Duration (hours),Nominal valid,12,Booking accepted,Nominal,P1
+BVA-005,Duration (hours),Maximum - 1,23,Booking accepted; 23hr tariff,Below Max,P1
+BVA-006,Duration (hours),Maximum,24,Booking accepted; 24hr tariff,At Max,P1
+BVA-007,Duration (hours),Maximum + 1,25,Validation error - exceeds max,Above Max,P1
+BVA-008,Vehicle Number,Minimum length - 1 (0 chars),(empty),Required field error,Below Min,P0
+BVA-009,Vehicle Number,Minimum length (4 chars),KA01,Accepted or error if minimum is higher,At Min,P1
+BVA-010,Vehicle Number,Minimum + 1 (5 chars),KA01A,Accepted,Above Min,P1
+BVA-011,Vehicle Number,Normal valid (10 chars),KA01AB1234,Accepted,Nominal,P0
+BVA-012,Vehicle Number,Near max (11 chars),KA01AB12345,Accepted or error at 11,Near Max,P1
+BVA-013,Vehicle Number,At max (12 chars),KA01AB123456,Accepted,At Max,P1
+BVA-014,Vehicle Number,Over max (13 chars),KA01AB1234567,Rejected or truncated,Above Max,P1
+BVA-015,Password (Register),Min - 1 (2 chars),ab,Rejected - too short,Below Min,P1
+BVA-016,Password (Register),Min (3 chars),abc,Rejected (if min is 6) or accepted (if min is 3),At Min,P1
+BVA-017,Password (Register),Min = 6 chars,abc123,Accepted if minimum is 6 chars,At Min,P0
+BVA-018,Password (Register),Max (reasonable 128 chars),128-char string,Accepted,At Max,P2
+BVA-019,Email (Login),Minimum valid,a@b.co,Accepted valid email,Min Valid,P2
+BVA-020,Email (Login),Empty,(empty),Required error,Below Min,P0

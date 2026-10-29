@@ -1,0 +1,11 @@
+TC-ID,Module,Test Scenario,Test Data,Expected Result,Priority,Type
+SMK-001,Application,Application loads without error,URL: https://saiteja-23-p.github.io/smart-parking-system/#/,Page loads; hero text visible,P0,Smoke
+SMK-002,Navigation,Navigation bar present,None,Nav bar with Smart Parking System logo displayed,P0,Smoke
+SMK-003,Login,Valid user login,Email: user@test.com / Password: password123,User authenticated and redirected to dashboard,P0,Smoke
+SMK-004,Login,Valid admin login,Email: admin@smartparking.com / Password: admin123,Admin authenticated; redirected to admin panel,P0,Smoke
+SMK-005,Parking,Parking locations/slot grid loads,Logged in as user,Parking slots or location list displayed,P0,Smoke
+SMK-006,Slot Selection,Available slot can be selected,Click available slot on grid,Booking form opens,P0,Smoke
+SMK-007,Booking,Booking completes with valid data,"Vehicle: KA01AB1234, Duration: 2",Booking confirmation with TOKEN displayed,P0,Smoke
+SMK-008,Dashboard,User dashboard loads,Logged in as user,Dashboard page renders with Active Bookings section,P0,Smoke
+SMK-009,Admin,Admin panel loads for admin user,Logged in as admin@smartparking.com,Admin Dashboard rendered,P0,Smoke
+SMK-010,Logout,User can logout,Logged in,User logged out and redirected to login,P0,Smoke

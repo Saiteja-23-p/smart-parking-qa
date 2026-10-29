@@ -1,0 +1,9 @@
+Defect ID,Title,Module,Environment,Severity,Priority,Status,Steps to Reproduce,Expected Result,Actual Result,Req ID,Notes
+DEF-001,Client-side mock login accepts arbitrary invalid passwords without validation,Authentication,Chromium / GitHub Pages,High,P0,Open,"1. Navigate to #/login
+2. Enter email user@test.com
+3. Enter arbitrary wrong password 'totallyWrongPassword!@#'
+4. Click Login button",Application must reject invalid credentials and show error message 'Invalid credentials',Application generates JWT token and redirects user directly to #/dashboard,FR-001,Evidence: screenshots/defects/DEF-001-wrong-password-accepted.png | Discovered via Playwright automated test TC-012
+DEF-002,Browser back button displays cached dashboard content after session logout,Security / Session,Chromium / GitHub Pages,Medium,P1,Open,"1. Login as valid user (user@test.com)
+2. Verify dashboard loads
+3. Clear session/token
+4. Press browser Back button",Client-side router should intercept history navigation and redirect unauthenticated user to #/login,Dashboard content ('Commuter Command Center' and 'Active Bookings') remains rendered from client state cache,FR-006,Evidence: screenshots/defects/DEF-002-back-button-session-leak.png | Discovered via Playwright automated test SEC-015

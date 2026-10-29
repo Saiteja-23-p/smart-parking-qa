@@ -1,0 +1,16 @@
+TC-ID,Module,Test Scenario,Test Data,Expected Result,Priority,Type
+SEC-001,Authentication,Unauthenticated access to /dashboard,No token in localStorage,Redirect to login,P0,Security
+SEC-002,Authentication,Unauthenticated access to /admin,No token in localStorage,Redirect to login,P0,Security
+SEC-003,Authorization,Regular user accessing /admin,ROLE_USER token,Access denied; not shown admin UI,P0,Security
+SEC-004,Authentication,Admin accessing /dashboard,ROLE_ADMIN token,Admin sees dashboard (or redirected to /admin),P1,Security
+SEC-005,Input Validation,SQL injection in login email,"' OR '1'='1",No login bypass; error shown,P1,Security
+SEC-006,Input Validation,XSS in login email,"<script>alert('xss')</script>",Script not executed,P1,Security
+SEC-007,Input Validation,XSS in vehicle number,"<img src=x onerror=alert(1)>",Script not executed; sanitized,P1,Security
+SEC-008,Input Validation,Long payload in vehicle number,1000-char string,No crash; error or truncation,P1,Security
+SEC-009,Session,Password masking in login form,Type in password field,Characters masked (dots),P1,Security
+SEC-010,Session,Logout clears localStorage token,Logged in user logouts,Token removed from localStorage,P0,Security
+SEC-011,Session,Token manipulation - corrupt token,Manually change localStorage token to garbage,User redirected to login on next navigation,P1,Security
+SEC-012,URL Manipulation,Add querystring to protected route,Navigate to #/dashboard?admin=true,No privilege escalation; normal behavior,P1,Security
+SEC-013,Data Exposure,Sensitive data in page source,View page source,No passwords or tokens hardcoded in visible HTML,P1,Security
+SEC-014,Data Exposure,Token visible in URL bar,Perform login,JWT token NOT exposed in URL,P1,Security
+SEC-015,Session,Access protected page after logout,Logout then browser back button,Dashboard not accessible; redirected to login,P0,Security

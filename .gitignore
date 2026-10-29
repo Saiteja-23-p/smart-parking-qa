@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+automation/node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test run temp artifacts (keep reports, ignore temporary trace dumps if large)
+test-results/
+automation/test-results/
+automation/reports/test-artifacts/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment & local overrides
+.env
+.env.local

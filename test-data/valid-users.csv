@@ -1,0 +1,6 @@
+name,email,password,role,notes
+Valid User 1,user@test.com,password123,ROLE_USER,Standard test user
+Valid User 2,sai.teja@gmail.com,Test@1234,ROLE_USER,User with real-looking name
+Valid Admin,admin@smartparking.com,Admin@123,ROLE_ADMIN,Confirmed admin credentials from bundle
+Valid User 3,qa.engineer@testlab.in,QA@2024,ROLE_USER,QA engineer test account
+Valid User 4,parking.user@hyderabad.com,Park@123,ROLE_USER,Location-specific test user

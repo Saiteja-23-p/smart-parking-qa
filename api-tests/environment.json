@@ -1,0 +1,42 @@
+{
+  "id": "smart-parking-qa-env",
+  "name": "Smart Parking — QA Environment",
+  "values": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.smart-parking.com",
+      "enabled": true,
+      "description": "Backend API base URL — REPLACE with actual URL when backend is available"
+    },
+    {
+      "key": "frontendUrl",
+      "value": "https://saiteja-23-p.github.io/smart-parking-system",
+      "enabled": true,
+      "description": "Frontend application URL (currently active)"
+    },
+    {
+      "key": "adminEmail",
+      "value": "admin@smartparking.com",
+      "enabled": true,
+      "description": "Admin test account email"
+    },
+    {
+      "key": "userEmail",
+      "value": "user@test.com",
+      "enabled": true,
+      "description": "Regular user test account email"
+    },
+    {
+      "key": "authToken",
+      "value": "",
+      "enabled": true,
+      "description": "JWT auth token — auto-populated by login test"
+    },
+    {
+      "key": "adminToken",
+      "value": "",
+      "enabled": true,
+      "description": "Admin JWT token — auto-populated by admin login test"
+    }
+  ]
+}
